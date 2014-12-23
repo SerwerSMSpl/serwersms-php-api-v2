@@ -1,0 +1,70 @@
+<?php
+
+namespace SerwerSMS;
+
+class Account {
+
+	public function __construct($master) {
+		$this->master = $master;
+	}
+
+	/**
+	 * Register new account
+	 * 
+	 * @param array $params
+	 *      @option string "phone"
+	 *      @option string "email"
+	 *      @option string "first_name"
+	 *      @option string "last_name"
+	 *      @option string "company"
+	 * @return array
+	 *      @option bool "success"
+	 */
+	public function add($params = array()) {
+		return $this->master->call('account/add', $params);
+	}
+
+	/**
+	 * Return limits SMS
+	 * 
+	 * @return array
+	 *      @option array "items"
+	 *          @option string "type" Type of message
+	 *          @option string "chars_limit" The maximum length of message
+	 *          @option string "value" Limit messages
+	 * 
+	 */
+	public function limits() {
+		return $this->master->call('account/limits');
+	}
+
+	/**
+	 * Return contact details
+	 * 
+	 * @return array
+	 *      @option string "telephone"
+	 *      @option string "email"
+	 *      @option string "form"
+	 *      @option string "faq"
+	 *      @option array "quardian_account"
+	 *          @option string "name"
+	 *          @option string "email"
+	 *          @option string "telephone"
+	 *          @option string "photo"
+	 */
+	public function help() {
+		return $this->master->call('account/help');
+	}
+
+	/**
+	 * Return messages from the administrator
+	 * 
+	 * @return array
+	 *      @option bool "new" Marking unread message
+	 *      @option string "message" 
+	 */
+	public function messages() {
+		return $this->master->call('account/messages');
+	}
+
+}
