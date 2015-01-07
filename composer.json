@@ -1,5 +1,5 @@
 {
-    "name": "serwersms/serwersms",
+    "name": "serwersms/serwersms-php-client",
     "version": "1.0.0",
     "description": "SerwerSMS API PHP",
     "keywords": ["serwersms", "api"],
