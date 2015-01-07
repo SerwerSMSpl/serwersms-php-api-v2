@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "SerwerSMS API PHP",
     "keywords": ["serwersms", "api"],
+    "homepage": "http://github.com/SerwerSMSpl/serwersms-php-api-v2",
     "type": "library",
     "require": {
         "php": ">=5.3.0",
