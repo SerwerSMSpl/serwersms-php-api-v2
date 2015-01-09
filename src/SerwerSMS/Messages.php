@@ -284,7 +284,7 @@ class Messages {
 	 */
 	public function delete($id, $unique_id = null) {
 		$params = array('id' => $id, 'unique_id' => $unique_id);
-		return $this->master->call('messages/delete/', $params);
+		return $this->master->call('messages/delete', $params);
 	}
 
 	/**
