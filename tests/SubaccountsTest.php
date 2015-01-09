@@ -11,31 +11,39 @@ class SubaccountsTest extends \PHPUnit_Framework_TestCase {
     }
     
     public function testAdd() {
-        $r = $this->serwersms->subaccounts->add('login','haslo',123,array('phone' => '500600700'));
-        $this->assertArrayHasKey('error', $r);
-        $this->assertEquals(4500, $r['error']['code']);
+        try{
+            $r = $this->serwersms->subaccounts->add('login','haslo',123,array('phone' => '500600700'));
+            $this->assertObjectHasAttribute('error', $r);
+            $this->assertEquals(4500, $r->error->code);
+        } catch(Exception $e){
+            
+        }
     }
 
     public function testIndex() {
         $r = $this->serwersms->subaccounts->index();
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
     
     public function testView() {
-        $r = $this->serwersms->subaccounts->view(123);
-        $this->assertArrayHasKey('error', $r);
-        $this->assertEquals(1004, $r['error']['code']);
+        try{
+            $r = $this->serwersms->subaccounts->view(123);
+            $this->assertObjectHasAttribute('error', $r);
+            $this->assertEquals(1004, $r->error->code);
+        } catch(Exception $e){
+            
+        }
     }
 
     public function testLimit() {
         $r = $this->serwersms->subaccounts->limit(123,'eco',200);
-        $this->assertArrayHasKey('success', $r);
-        $this->assertFalse($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertFalse($r->success);
     }
 
     public function testDelete() {
         $r = $this->serwersms->subaccounts->delete(123);
-        $this->assertArrayHasKey('success', $r);
-        $this->assertFalse($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertFalse($r->success);
     }
 }

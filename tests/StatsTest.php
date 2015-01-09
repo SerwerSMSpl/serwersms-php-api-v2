@@ -12,6 +12,6 @@ class StatsTest extends \PHPUnit_Framework_TestCase {
 
     public function testIndex() {
         $r = $this->serwersms->stats->index();
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
 }

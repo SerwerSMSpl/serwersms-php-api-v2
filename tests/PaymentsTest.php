@@ -12,13 +12,13 @@ class PaymentsTest extends \PHPUnit_Framework_TestCase {
 
     public function testIndex() {
         $r = $this->serwersms->payments->index();
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
     
     public function testView() {
         $list = $this->serwersms->payments->index();
-        $r = $this->serwersms->payments->view($list['items'][0]['id']);
-        $this->assertArrayHasKey('id', $r);
+        $r = $this->serwersms->payments->view($list->items[0]->id);
+        $this->assertObjectHasAttribute('id', $r);
     }
 
 }

@@ -12,27 +12,27 @@ class TemplatesTest extends \PHPUnit_Framework_TestCase {
 
     public function testIndex() {
         $r = $this->serwersms->templates->index();
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
     
     public function testAdd() {
         $r = $this->serwersms->templates->add('New template', 'Message from template');
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
     
     public function testEdit() {
         $list = $this->serwersms->templates->index();
-        $r = $this->serwersms->templates->edit($list['items'][0]['id'],'New template', 'Editing message from template');
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $r = $this->serwersms->templates->edit($list->items[0]->id,'New template', 'Editing message from template');
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
     
     public function testDelete() {
         $list = $this->serwersms->templates->index();
-        $r = $this->serwersms->templates->delete($list['items'][0]['id']);
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $r = $this->serwersms->templates->delete($list->items[0]->id);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
 
 }

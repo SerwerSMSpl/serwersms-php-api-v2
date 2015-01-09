@@ -13,28 +13,28 @@ class BlacklistTest extends \PHPUnit_Framework_TestCase {
     public function testAdd() {
 
         $r = $this->serwersms->blacklist->add('500600720');
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
 
     public function testIndex() {
 
         $r = $this->serwersms->blacklist->index();
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
     
     public function testCheck() {
 
         $r = $this->serwersms->blacklist->check('500600720');
-        $this->assertArrayHasKey('exists', $r);
-        $this->assertTrue($r['exists']);
+        $this->assertObjectHasAttribute('exists', $r);
+        $this->assertTrue($r->exists);
     }
 
     public function testDelete() {
 
         $r = $this->serwersms->blacklist->delete('500600720');
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
 
 }

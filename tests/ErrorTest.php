@@ -11,9 +11,13 @@ class ErrorTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testView() {
-        $r = $this->serwersms->error->view(1000);
-        $this->assertArrayHasKey('error', $r);
-        $this->assertEquals(1000, $r['error']['code']);
+        try{
+            $r = $this->serwersms->error->view(1000);
+            $this->assertObjectHasAttribute('error', $r);
+            $this->assertEquals(1000, $r->error->code);
+        } catch(Exception $e){
+            
+        }
     }
     
 }

@@ -12,12 +12,12 @@ class SendersTest extends \PHPUnit_Framework_TestCase {
 
     public function testAdd() {
         $r = $this->serwersms->senders->add('NewSender');
-        $this->assertArrayHasKey('success', $r);
-        $this->assertTrue($r['success']);
+        $this->assertObjectHasAttribute('success', $r);
+        $this->assertTrue($r->success);
     }
 
     public function testIndex() {
         $r = $this->serwersms->senders->index(array('personalized' => true));
-        $this->assertArrayHasKey('items', $r);
+        $this->assertObjectHasAttribute('items', $r);
     }
 }
