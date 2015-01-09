@@ -15,41 +15,41 @@ try{
             array(
                     '+48500600700',
                     '+48600700800'
-                ),
+            ),
             'Test FULL message',
             'INFORMACJA',
             array(
                     'test' => true,
                     'details' => true
-                )
-            );
+            )
+  );
   
   // SMS ECO
   $result = $serwersms->messages->sendSms(
             array(
                     '+48500600700',
                     '+48600700800'
-                ),
+            ),
             'Test ECO message',
             null,
             array(
                     'test' => true,
                     'details' => true
-                )
-            );
+            )
+  );
 
   // VOICE from text
   $result = $serwersms->messages->sendVoice(
             array(
                     '+48500600700',
                     '+48600700800'
-                ),
+            ),
             array(
                     'text' => 'Test message',
                     'test' => true,
                     'details' => true
-                )
-            );
+            )
+  );
   
   // MMS
   $list = $serwersms->files->index('mms');
@@ -57,14 +57,14 @@ try{
             array(
                     '+48500600700',
                     '+48600700800'
-                ),
+            ),
             'MMS Title',
             array(
                     'test' => true,
                     'file_id' => $list->items[0]->id,
                     'details' => true
-                )
-            );
+            )
+  );
   
   echo 'Skolejkowano: '.$result->queued.'<br />';
   echo 'Niewysłano: '.$result->unsent.'<br />';
@@ -90,9 +90,9 @@ try{
   $serwersms = new SerwerSMS\SerwerSMS('login','haslo');
 
   $messages[] = array(
-          'phone' => '500600700',
-          'text' => 'First message'
-      );
+      'phone' => '500600700',
+      'text' => 'First message'
+  );
   $messages[] = array(
       'phone' => '600700800',
       'text' => 'Second message'
@@ -104,8 +104,8 @@ try{
             array(
                     'test' => true,
                     'details' => true
-                  )
-            );
+            )
+  );
   
   echo 'Skolejkowano: '.$result->queued.'<br />';
   echo 'Niewysłano: '.$result->unsent.'<br />';
@@ -189,6 +189,6 @@ composer.json
 {
   "require": {
         "serwersms/serwersms-php-client": "1.0.*"
-    }
+  }
 }
 ```
