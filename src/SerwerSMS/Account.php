@@ -26,7 +26,8 @@ class Account {
 
 	/**
 	 * Return limits SMS
-	 * 
+	 * @param array $params
+     *      @option bool "show_type"
 	 * @return array
 	 *      @option array "items"
 	 *          @option string "type" Type of message
@@ -34,8 +35,8 @@ class Account {
 	 *          @option string "value" Limit messages
 	 * 
 	 */
-	public function limits() {
-		return $this->master->call('account/limits');
+	public function limits($params = array()) {
+		return $this->master->call('account/limits',$params);
 	}
 
 	/**
@@ -46,7 +47,7 @@ class Account {
 	 *      @option string "email"
 	 *      @option string "form"
 	 *      @option string "faq"
-	 *      @option array "quardian_account"
+	 *      @option array "account_maintainer"
 	 *          @option string "name"
 	 *          @option string "email"
 	 *          @option string "telephone"
