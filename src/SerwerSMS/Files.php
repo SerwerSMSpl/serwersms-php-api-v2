@@ -20,6 +20,7 @@ class Files {
 	 *      @option string "id"
 	 */
 	public function add($type, $params) {
+        $params = array_merge(array('type' => $type), $params);
 		return $this->master->call('files/add', $params);
 	}
 
