@@ -73,6 +73,7 @@ class SerwerSMS {
 
 		$params['username'] = $this->username;
 		$params['password'] = $this->password;
+        $params['system'] = 'client_php';
 
 		$curl = curl_init($this->api_url . $url . '.' . $this->format);
 
