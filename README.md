@@ -182,6 +182,9 @@ lib-curl >= 7.1
 ## Dokumentacja
 http://dev.serwersms.pl
 
+Konsola api:
+http://apiconsole.serwersms.pl
+
 ## Instalacja
 
 composer.json
