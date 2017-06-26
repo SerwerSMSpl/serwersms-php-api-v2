@@ -17,7 +17,7 @@ class Account {
 	 *      @option string "first_name"
 	 *      @option string "last_name"
 	 *      @option string "company"
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function add($params = array()) {
@@ -28,7 +28,7 @@ class Account {
 	 * Return limits SMS
 	 * @param array $params
      *      @option bool "show_type"
-	 * @return array
+	 * @return object
 	 *      @option array "items"
 	 *          @option string "type" Type of message
 	 *          @option string "chars_limit" The maximum length of message
@@ -42,7 +42,7 @@ class Account {
 	/**
 	 * Return contact details
 	 * 
-	 * @return array
+	 * @return object
 	 *      @option string "telephone"
 	 *      @option string "email"
 	 *      @option string "form"
@@ -60,12 +60,11 @@ class Account {
 	/**
 	 * Return messages from the administrator
 	 * 
-	 * @return array
+	 * @return object
 	 *      @option bool "new" Marking unread message
 	 *      @option string "message" 
 	 */
 	public function messages() {
 		return $this->master->call('account/messages');
 	}
-
 }
