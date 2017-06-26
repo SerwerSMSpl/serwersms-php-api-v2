@@ -30,7 +30,7 @@ class Messages {
      *      @option bool "success"
      *      @option int "queued" Number of queued messages
      *      @option int "unsent" Number of unsent messages
-     *      @option array "items"
+     *      @option object "items"
      *          @option string "id"
      *          @option string "phone"
      *          @option string "status" - queued|unsent
