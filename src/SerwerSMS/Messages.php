@@ -26,7 +26,7 @@ class Messages {
      *      @option int|array "group_id" Sending to the group instead of a phone number
      *      @option int|array "contact_id" Sending to phone from contacts
      *      @option string|array "unique_id" Own identifiers of messages
-     * @return array
+     * @return object
      *      @option bool "success"
      *      @option int "queued" Number of queued messages
      *      @option int "unsent" Number of unsent messages
@@ -67,11 +67,11 @@ class Messages {
      *      @option string "text" Message if is set group_id
      *      @option string|array "uniqe_id" Own identifiers of messages
      *      @option bool "voice" Send VMS
-     * @return array
+     * @return object
      *      @option bool "success"
      *      @option int "queued" Number of queued messages
      *      @option int "unsent" Number of unsent messages
-     *      @option array "items"
+     *      @option object "items"
      *          @option string "id"
      *          @option string "phone"
      *          @option string "status" - queued|unsent
@@ -100,11 +100,11 @@ class Messages {
      *      @option bool "test" Test mode
      *      @option int|array "group_id" Sending to the group instead of a phone number
      *      @option int|array "contact_id" Sending to phone from contacts
-     * @return array
+     * @return object
      *      @option bool "success"
      *      @option int "queued" Number of queued messages
      *      @option int "unsent" Number of unsent messages
-     *      @option array "items"
+     *      @option object "items"
      *          @option string "id"
      *          @option string "phone"
      *          @option string "status" - queued|unsent
@@ -132,11 +132,11 @@ class Messages {
      *      @option string "date" Set the date of sending
      *      @option bool "test" Test mode
      *      @option int|array "group_id" Sending to the group instead of a phone number
-     * @return array
+     * @return object
      *      @option bool "success"
      *      @option int "queued" Number of queued messages
      *      @option int "unsent" Number of unsent messages
-     *      @option array "items"
+     *      @option object "items"
      *          @option string "id"
      *          @option string "phone"
      *          @option string "status" - queued|unsent
@@ -161,7 +161,7 @@ class Messages {
      * @param array $params
      *      @option string "unique_id"
      *      @option bool "show_contact" Show details of the recipient from the contacts
-     * @return array
+     * @return object
      *      @option string "id"
      *      @option string "phone"
      *      @option string "status"
@@ -192,7 +192,7 @@ class Messages {
      *          - sending_to_foreign_networks_is_locked
      *          - no_permission_to_send_messages
      *          - other_error
-     *      @option array "contact"
+     *      @option object "contact"
      *          @option string "first_name"
      *          @option string "last_name"
      *          @option string "company"
@@ -224,11 +224,11 @@ class Messages {
      *      @option int "page" The number of the displayed page
      *      @option int "limit" Limit items are displayed on the single page
      *      @option string "order" asc|desc
-     * @return array
-     *      @option array "paging"
+     * @return object
+     *      @option object "paging"
      *          @option int "page" The number of current page
      *          @option int "count" The number of all pages
-     *      @option array items
+     *      @option object items
      *          @option string "id"
      *          @option string "phone"
      *          @option string "status"
@@ -269,7 +269,7 @@ class Messages {
      *              - sending_to_foreign_networks_is_locked
      *              - no_permission_to_send_messages
      *              - other_error
-     *          @option array "contact"
+     *          @option object "contact"
      *              @option int "id"
      *              @option string "first_name"
      *              @option string "last_name"
@@ -290,7 +290,7 @@ class Messages {
      * 
      * @param string|array $id
      * @param string|array $unique_id
-     * @return array
+     * @return object
      *      @option bool "success"
      */
     public function delete($id, $unique_id = null) {
@@ -315,11 +315,11 @@ class Messages {
      *      @option int "page" The number of the displayed page
      *      @option int "limit" Limit items are displayed on the single page
      *      @option string "order" asc|desc
-     * @return array
-     *      @option array "paging"
+     * @return object
+     *      @option object "paging"
      *          @option int "page" The number of current page
      *          @option int "count" The number of all pages
-     *      @option array "items"
+     *      @option object "items"
      *          @option int "id"
      *          @option string "type" eco|nd|ndi|mms
      *          @option string "phone"
@@ -329,12 +329,12 @@ class Messages {
      *          @option string "text" Message
      *          @option string "to_number" Number of the recipient (for MMS)
      *          @option string "title" Title of message (for MMS)
-     *          @option array "attachments" (for MMS)
+     *          @option object "attachments" (for MMS)
      *              @option int "id"
      *              @option string "name"
      *              @option string "content_type"
      *              @option string "data" File
-     *          @option array "contact"
+     *          @option object "contact"
      *              @option string "first_name"
      *              @option string "last_name"
      *              @option string "company"
@@ -355,7 +355,7 @@ class Messages {
      * 
      * @param string $phone Sender phone number
      * @param string $text Message
-     * @return array
+     * @return object
      *      @option bool "success"
      */
     public function sendNd($phone, $text) {
@@ -372,7 +372,7 @@ class Messages {
      * @param string $phone Sender phone number
      * @param string $text Message
      * @param string $ndi_number Recipient phone number
-     * @return array
+     * @return object
      *      @option bool "success"
      */
     public function sendNdi($phone, $text, $ndi_number) {

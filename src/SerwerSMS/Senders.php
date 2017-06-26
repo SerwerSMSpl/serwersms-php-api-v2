@@ -12,7 +12,7 @@ class Senders {
 	 * Creating new Sender name
 	 * 
 	 * @param string $name
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function add($name) {
@@ -27,8 +27,8 @@ class Senders {
 	 *      @option bool "predefined"
      *      @option string "sort" Values: name
      *      @option string "order" Values: asc|desc
-	 * @return array
-	 *      @option array "items"
+	 * @return object
+	 *      @option object "items"
 	 *          @option string "name"
 	 *          @option string "agreement" delivered|required|not_required
 	 *          @option string "status" pending_authorization|authorized|rejected|deactivated

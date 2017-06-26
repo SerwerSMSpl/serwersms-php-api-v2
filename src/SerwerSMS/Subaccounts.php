@@ -14,7 +14,7 @@ class Subaccounts {
 	 * @param string $subaccount_username
 	 * @param string $subaccount_password
 	 * @param int $subaccount_id Subaccount ID, which is template of powers
-	 * @param array $params
+	 * @param object $params
 	 *      @option string "name"
 	 *      @option string "phone"
 	 *      @option string "email"
@@ -33,7 +33,7 @@ class Subaccounts {
 	 * List of subaccounts
 	 * 
 	 * @return array
-	 *      @option array "items"
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option string "username"
 	 */
@@ -45,7 +45,7 @@ class Subaccounts {
 	 * View details of subaccount
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option int "id"
 	 *      @option string "username"
 	 *      @option string "name"
@@ -63,7 +63,7 @@ class Subaccounts {
 	 * @param int $id
 	 * @param string $type Message type: eco|full|voice|mms|hlr
 	 * @param int $value
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -80,7 +80,7 @@ class Subaccounts {
 	 * Deleting a subaccount
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($id) {

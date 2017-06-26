@@ -11,8 +11,8 @@ class Premium {
 	/**
 	 * List of received SMS Premium
 	 * 
-	 * @return array
-	 *      @option array "items"
+	 * @return object
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option string "to_number" Premium number
 	 *          @option string "from_number" Sender phone number
@@ -31,7 +31,7 @@ class Premium {
 	 * @param string $text Message
 	 * @param string $gate Premium number
 	 * @param int $id ID received SMS Premium
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function send($phone, $text, $gate, $id) {
@@ -48,10 +48,10 @@ class Premium {
 	 * View quiz results
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option int "id"
 	 *      @option string "name"
-	 *      @option array "items"
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option int "count" Number of response
 	 */

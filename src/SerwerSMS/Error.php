@@ -12,7 +12,7 @@ class Error {
 	 * Preview error
 	 * 
 	 * @param int $code
-	 * @return array
+	 * @return object
 	 *      @option int "code"
 	 *      @option string "type"
 	 *      @option string "message"

@@ -12,7 +12,7 @@ class Groups {
 	 * Add new group
 	 * 
 	 * @param string $name
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -30,7 +30,7 @@ class Groups {
 	 *      @option int "limit" Limit items are displayed on the single page
      *      @option string "sort" Values: name
      *      @option string "order" Values: asc|desc
-	 * @return array
+	 * @return object
 	 *      @option array "paging"
 	 *          @option int "page" The number of current page
 	 *          @option int "count" The number of all pages
@@ -48,7 +48,7 @@ class Groups {
 	 * View single group
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option int "id"
 	 *      @option string "name"
 	 *      @option int "count" Number of contacts in the group
@@ -63,7 +63,7 @@ class Groups {
 	 * 
 	 * @param int $id
 	 * @param string $name
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -79,7 +79,7 @@ class Groups {
 	 * Deleting a group
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($id) {
@@ -91,7 +91,7 @@ class Groups {
 	 * Viewing a groups containing phone
 	 * 
 	 * @param string $phone
-	 * @return array
+	 * @return object
 	 *      @option int "id"
 	 *      @option int "group_id"
 	 *      @option string "group_name"

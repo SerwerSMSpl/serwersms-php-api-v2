@@ -15,7 +15,7 @@ class Files {
 	 * @param array $params
 	 *      @option string "url" URL address to file
 	 *      @option resource "file" A file handler (only for MMS)
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option string "id"
 	 */
@@ -28,7 +28,7 @@ class Files {
 	 * List of files
 	 * 
 	 * @param string $type - mms|voice
-	 * @return array
+	 * @return object
 	 *      @option array "items"
 	 *          @option string "id"
 	 *          @option string "name"
@@ -46,7 +46,7 @@ class Files {
 	 * 
 	 * @param string $id
 	 * @param string $type - mms|voice
-	 * @return array
+	 * @return object
 	 *      @option string "id"
 	 *      @option string "name"
 	 *      @option int "size"
@@ -66,7 +66,7 @@ class Files {
 	 * 
 	 * @param string $id
 	 * @param string $type - mms|voice
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($id, $type) {

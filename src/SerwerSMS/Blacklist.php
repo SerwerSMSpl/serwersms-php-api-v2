@@ -12,7 +12,7 @@ class Blacklist {
 	 * Add phone to the blacklist
 	 * 
 	 * @param string $phone
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -28,7 +28,7 @@ class Blacklist {
 	 * @param array $params
 	 *      @option int "page" The number of the displayed page
 	 *      @option int "limit" Limit items are displayed on the single page
-	 * @return array
+	 * @return object
 	 *      @option array "paging"
 	 *          @option int "page" The number of current page
 	 *          @option int "count" The number of all pages
@@ -45,7 +45,7 @@ class Blacklist {
 	 * Checking if phone is blacklisted
 	 * 
 	 * @param string $phone
-	 * @return array
+	 * @return object
 	 *      @option bool "exists"
 	 */
 	public function check($phone) {
@@ -57,7 +57,7 @@ class Blacklist {
 	 * Deleting phone from the blacklist
 	 * 
 	 * @param string $phone
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($phone) {

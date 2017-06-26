@@ -13,8 +13,8 @@ class Templates {
 	 * @param array $params
      *      @option string "sort" Values: name
      *      @option string "order" Values: asc|desc
-	 * @return array
-	 *      @option array "items"
+	 * @return object
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option string "name"
 	 *          @option string "text"
@@ -28,8 +28,8 @@ class Templates {
 	 * 
 	 * @param string $name
 	 * @param string $text
-	 * @return array
-	 *      @option array
+	 * @return object
+	 *      @option object
 	 *          @option bool "success"
 	 *          @option int "id"
 	 */
@@ -47,7 +47,7 @@ class Templates {
 	 * @param int $id
 	 * @param string $name
 	 * @param string $text
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -64,7 +64,7 @@ class Templates {
 	 * Deleting a template
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($id) {

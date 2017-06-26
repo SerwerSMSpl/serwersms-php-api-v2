@@ -11,8 +11,8 @@ class Payments {
 	/**
 	 * List of payments
 	 * 
-	 * @return array
-	 *      @option array "items"
+	 * @return object
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option string "number"
 	 *          @option string "state" paid|not_paid
@@ -29,7 +29,7 @@ class Payments {
 	 * View single payment
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option int "id"
 	 *      @option string "number"
 	 *      @option string "state" paid|not_paid

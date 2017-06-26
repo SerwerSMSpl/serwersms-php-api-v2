@@ -22,7 +22,7 @@ class Contacts {
 	 *      @option string "address"
 	 *      @option string "city"
 	 *      @option string "description"
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -44,7 +44,7 @@ class Contacts {
 	 *      @option int "limit" Limit items are displayed on the single page
      *      @option string "sort" Values: first_name|last_name|phone|company|tax_id|email|address|city|description
      *      @option string "order" Values: asc|desc
-	 * @return array
+	 * @return object
 	 *      @option array "paging"
 	 *          @option int "page" The number of current page
 	 *          @option int "count" The number of all pages
@@ -75,7 +75,7 @@ class Contacts {
 	 * View single contact
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option integer "id"
 	 *      @option string "phone"
 	 *      @option string "email"
@@ -108,7 +108,7 @@ class Contacts {
 	 *      @option string "address"
 	 *      @option string "city"
 	 *      @option string "description"
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 */
@@ -125,7 +125,7 @@ class Contacts {
 	 * Deleting a phone from contacts
 	 * 
 	 * @param int $id
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 */
 	public function delete($id) {
@@ -143,7 +143,7 @@ class Contacts {
 	 *      @option string "first_name"
 	 *      @option string "last_name"
 	 *      @option string "company"
-	 * @return array
+	 * @return object
 	 *      @option bool "success"
 	 *      @option int "id"
 	 *      @option int "correct" Number of contacts imported correctly

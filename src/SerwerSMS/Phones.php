@@ -13,7 +13,7 @@ class Phones {
 	 * 
 	 * @param string $phone
 	 * @param string $id Query ID returned if the processing takes longer than 60 seconds
-	 * @return array
+	 * @return object
 	 *      @option string "phone"
 	 *      @option string "status"
 	 *      @option int "imsi"
@@ -30,7 +30,7 @@ class Phones {
 	 * Validating phone number
 	 * 
 	 * @param string $phone
-	 * @return array
+	 * @return object
 	 *      @option bool "correct"
 	 */
 	public function test($phone) {

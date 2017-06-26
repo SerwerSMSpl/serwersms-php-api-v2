@@ -15,8 +15,8 @@ class Stats {
 	 *      @option string "type" eco|full|voice|mms
 	 *      @option string "begin" Start date
 	 *      @option string "end" End date
-	 * @return array
-	 *      @option array "items"
+	 * @return object
+	 *      @option object "items"
 	 *          @option int "id"
 	 *          @option string "name"
 	 *          @option int "delivered"
