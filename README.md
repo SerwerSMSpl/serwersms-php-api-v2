@@ -187,11 +187,7 @@ http://apiconsole.serwersms.pl
 
 ## Instalacja
 
-composer.json
+Instalacja przez Composera (https://getcomposer.org/):
 ```
-{
-  "require": {
-        "serwersms/serwersms-php-client": "1.0.*"
-  }
-}
+composer require serwersms/serwersms-php-client
 ```
