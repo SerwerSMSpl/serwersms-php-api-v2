@@ -8,7 +8,7 @@ class SerwerSMS {
 
 	public $password;
 
-	public $api_url = 'https://api2.serwersms.pl/';
+	public $api_url = 'https://api2.serwersms.pl';
 
 	public $format = 'json';
 
@@ -75,7 +75,7 @@ class SerwerSMS {
 		$params['password'] = $this->password;
         $params['system'] = 'client_php';
 
-		$curl = curl_init($this->api_url . $url . '.' . $this->format);
+		$curl = curl_init($this->api_url . '/' . $url . '.' . $this->format);
 
 		curl_setopt($curl, CURLOPT_POST, 1);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
@@ -86,8 +86,14 @@ class SerwerSMS {
 		$answer = curl_exec($curl);
 
 		if (curl_errno($curl)) {
-			throw new Exception('Failed call: ' . curl_error($curl) . ' ' . curl_errno($curl));
+			throw new Exception('Failed call: ' . curl_error($curl), curl_errno($curl));
 		}
+        
+        $http_code = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+        if($http_code != 200){
+            throw new Exception('Unexpected HTTP code', $http_code);
+        }
+        
 		curl_close($curl);
 
 		if ($this->format == 'xml') {
