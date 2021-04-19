@@ -1,7 +1,7 @@
 # SerwerSMS.pl PHP Client API v2
 Klient PHP do komunikacji zdalnej z API v2 SerwerSMS.pl
 
-Zalecane jest, aby komunikacja przez HTTPS API odbywała się z loginów utworzonych specjalnie do połączenia przez API. Konto użytkownika API można utworzyć w Panelu Klienta → Ustawienia interfejsów → HTTPS XML API → Użytkownicy.
+Komunikacja przez HTTPS API odbywa się z loginów utworzonych specjalnie do połączenia przez API. Konto użytkownika API można utworzyć w Panelu Klienta → Ustawienia interfejsów → HTTPS API → Użytkownicy API.
 
 #### Wysyłka SMS
 ```php
