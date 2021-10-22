@@ -1,11 +1,17 @@
 {
     "name": "serwersms/serwersms-php-client",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "SerwerSMS API PHP",
-    "keywords": ["serwersms", "php", "api"],
-    "homepage": "http://github.com/SerwerSMSpl/serwersms-php-api-v2",
+    "keywords": ["serwersms", "php", "api", "sms"],
+    "homepage": "https://serwersms.pl",
     "license": "Apache-2.0",
     "type": "library",
+    "repositories": [
+        {
+          "type": "git",
+          "url": "https://github.com/SerwerSMSpl/serwersms-php-api-v2"
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
         "lib-curl": ">=7.1"
@@ -14,13 +20,13 @@
         "phpunit/phpunit": "4.2.*"
     },
     "autoload": {
-        "psr-4": { "SerwerSMS\\": 
-                    [
-                        "src/",
-                        "src/SerwerSMS"
-                    ] }
+        "psr-4": {
+            "SerwerSMS\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "SerwerSMS\\Tests\\": "tests/" }
+        "psr-4": {
+            "SerwerSMS\\Tests\\": "tests/"
+        }
     }
 }

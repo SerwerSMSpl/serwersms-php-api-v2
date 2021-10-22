@@ -1,6 +1,6 @@
 <?php
 
-namespace SerwerSMS;
+namespace SerwerSMS\SerwerSMS;
 
 class Error {
 

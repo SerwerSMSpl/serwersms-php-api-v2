@@ -2,6 +2,22 @@
 
 namespace SerwerSMS;
 
+use SerwerSMS\SerwerSMS\Messages;
+use SerwerSMS\SerwerSMS\Files;
+use SerwerSMS\SerwerSMS\Premium;
+use SerwerSMS\SerwerSMS\Account;
+use SerwerSMS\SerwerSMS\Senders;
+use SerwerSMS\SerwerSMS\Groups;
+use SerwerSMS\SerwerSMS\Contacts;
+use SerwerSMS\SerwerSMS\Phones;
+use SerwerSMS\SerwerSMS\Subaccounts;
+use SerwerSMS\SerwerSMS\Blacklist;
+use SerwerSMS\SerwerSMS\Payments;
+use SerwerSMS\SerwerSMS\Stats;
+use SerwerSMS\SerwerSMS\Templates;
+use SerwerSMS\SerwerSMS\Error;
+use SerwerSMS\SerwerSMS\Exception;
+
 class SerwerSMS {
 
 	public $username;
