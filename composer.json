@@ -1,6 +1,6 @@
 {
     "name": "serwersms/serwersms-php-client",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "SerwerSMS API PHP",
     "keywords": ["serwersms", "php", "api", "sms"],
     "homepage": "https://serwersms.pl",
