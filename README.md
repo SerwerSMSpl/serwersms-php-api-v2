@@ -1,14 +1,14 @@
 # SerwerSMS.pl PHP Client API v2
 Klient PHP do komunikacji zdalnej z API v2 SerwerSMS.pl
 
-Komunikacja przez HTTPS API odbywa się z loginów utworzonych specjalnie do połączenia przez API. Konto użytkownika API można utworzyć w Panelu Klienta → Ustawienia interfejsów → HTTPS API → Użytkownicy API.
+W celu autoryzacji za pośrednictwem Tokenu API, należy wygenerować go po stronie Panelu Klienta w menu Ustawienia interfejsów  → HTTPS API → Tokeny API. Połączenie powinno być szyfrowane protokołem SSL. Format nagłówka autoryzacyjnego jest zgodna z formatem Bearer token
 
 #### Wysyłka SMS
 ```php
 require_once('vendor/autoload.php');
 
 try{
-  $serwersms = new SerwerSMS\SerwerSMS('login','haslo');
+  $serwersms = new SerwerSMS\SerwerSMS($token);
   
   // SMS FULL
   $result = $serwersms->messages->sendSms(
@@ -87,7 +87,7 @@ try{
 require_once('vendor/autoload.php');
 
 try{
-  $serwersms = new SerwerSMS\SerwerSMS('login','haslo');
+  $serwersms = new SerwerSMS\SerwerSMS($token);
 
   $messages[] = array(
       'phone' => '500600700',
@@ -128,7 +128,7 @@ try{
 require_once('vendor/autoload.php');
 
 try{
-  $serwersms = new SerwerSMS\SerwerSMS('login','haslo');
+  $serwersms = new SerwerSMS\SerwerSMS($token);
 
   // Get messages reports
   $result = $serwersms->messages->reports(array('id' => array('aca3944055')));
@@ -155,7 +155,7 @@ try{
 require_once('vendor/autoload.php');
 
 try{
-  $serwersms = new SerwerSMS\SerwerSMS('login','haslo');
+  $serwersms = new SerwerSMS\SerwerSMS($token);
 
   // Get recived messages
   $result = $serwersms->messages->recived('ndi');
