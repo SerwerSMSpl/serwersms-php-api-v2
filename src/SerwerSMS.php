@@ -20,9 +20,13 @@ use SerwerSMS\SerwerSMS\Exception;
 
 class SerwerSMS {
 
-	public $token;
+	public $username;
+
+	public $password;
 
 	public $api_url = 'https://api2.serwersms.pl';
+
+	public $format = 'json';
 
 	public $messages;
 
@@ -52,13 +56,18 @@ class SerwerSMS {
 
 	public $error;
 
-	public function __construct($token) {
+	public function __construct($username, $password) {
 
-		if (!$token) {
-			throw new Exception('Token is empty');
+		if (!$username) {
+			throw new Exception('Username is empty');
 		}
 
-		$this->token = $token;
+		if (!$password) {
+			throw new Exception('Password is empty');
+		}
+
+		$this->username = $username;
+		$this->password = $password;
 
 		$this->messages = new Messages($this);
 		$this->files = new Files($this);
@@ -78,21 +87,18 @@ class SerwerSMS {
 
 	public function call($url, $params = array()) {
 
+		$params['username'] = $this->username;
+		$params['password'] = $this->password;
         $params['system'] = 'client_php';
 
-		$curl = curl_init($this->api_url . '/' . $url . '.json');
-        $data_string = json_encode($params);
+		$curl = curl_init($this->api_url . '/' . $url . '.' . $this->format);
+
 		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            'Content-type: application/json',
-            'Content-Length: ' . strlen($data_string),
-            'Authorization: Bearer '.$this->token
-        ));
 		$answer = curl_exec($curl);
 
 		if (curl_errno($curl)) {
@@ -106,11 +112,17 @@ class SerwerSMS {
         
 		curl_close($curl);
 
-        $result = json_decode($answer);
-        if(isset($result->error)){
-            throw new Exception($result->error->message,(int) $result->error->code);
+		if ($this->format == 'xml') {
+            $result = simplexml_load_string($answer);
+            if(isset($result->code) and isset($result->type) and isset($result->message)){
+                throw new Exception($result->message,(int) $result->code);
+            }
+        } else {
+            $result = json_decode($answer);
+            if(isset($result->error)){
+                throw new Exception($result->error->message,(int) $result->error->code);
+            }
         }
-        
         return $result;
 	}
 
