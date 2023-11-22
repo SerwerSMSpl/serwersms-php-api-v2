@@ -4,7 +4,12 @@ namespace SerwerSMS\SerwerSMS;
 
 class Groups {
 
-	public function __construct($master) {
+    /**
+     * @var mixed
+     */
+    private $master;
+
+    public function __construct($master) {
 		$this->master = $master;
 	}
 

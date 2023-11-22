@@ -48,7 +48,7 @@ class SerwerSMS {
 
 	public $stats;
 
-	public $tamplates;
+	public $templates;
 
 	public $error;
 

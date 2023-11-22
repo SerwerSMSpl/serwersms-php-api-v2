@@ -4,6 +4,11 @@ namespace SerwerSMS\SerwerSMS;
 
 class Messages {
 
+    /**
+     * @var mixed
+     */
+    private $master;
+
     public function __construct($master) {
         $this->master = $master;
     }
